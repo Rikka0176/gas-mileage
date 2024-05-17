@@ -1,0 +1,22 @@
+<h1>詳細情報</h1>
+<table>
+  <thead>
+    <tr>
+      <th>メーカー</th>
+      <th>モデル</th>
+      <th>年式</th>
+      <th>燃費</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @car.make %></td>
+      <td><%= @car.model %></td>
+      <td><%= @car.year %></td>
+      <td><%= @car.mileage %> km/L</td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to "一覧に戻る", cars_path, class: "btn btn-secondary" %>
+<%= link_to '削除', @car, method: :delete, data: { confirm: '本当に削除しますか？' } %>

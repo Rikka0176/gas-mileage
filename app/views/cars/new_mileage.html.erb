@@ -1,0 +1,29 @@
+<h1>新規燃費情報</h1>
+
+<%= form_with(model: @mileage_record, url: create_mileage_car_path(@car)) do |form| %>
+  <% if @mileage_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@mileage_record.errors.count, "error") %> prohibited this mileage record from being saved:</h2>
+
+      <ul>
+      <% @mileage_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :distance, "距離" %>
+    <%= form.number_field :distance, required: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fuel_amount, "給油量" %>
+    <%= form.number_field :fuel_amount, required: true %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit "保存" %>
+  </div>
+<% end %>

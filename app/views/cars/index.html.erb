@@ -1,0 +1,29 @@
+<h1>車種一覧</h1>
+<%= link_to "新しい車を追加", new_car_path, class: "btn btn-primary" %> <!-- 新しい車追加ボタン -->
+<table>
+  <thead>
+    <tr>
+      <th>メーカー</th>
+      <th>車種</th>
+      <th>年式</th>
+      <th>燃費</th>
+      <th>編集</th> <!-- アクションを表示する列を追加 -->
+    </tr>
+  </thead>
+  <tbody>
+    <% @cars.each do |car| %>
+      <tr>
+        <td><%= car.make %></td>
+        <td><%= car.model %></td>
+        <td><%= car.year %></td>
+        <td><%= car.mileage %> km/L</td>
+        <td>
+          <%= link_to "詳細情報を表示", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> <!-- 削除ボタン -->
+          <%= link_to "燃費情報を追加", new_mileage_car_path(car), class: "btn btn-primary" %> <!-- 燃費情報追加ボタン -->
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
