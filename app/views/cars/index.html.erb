@@ -18,12 +18,11 @@
         <td><%= car.year %></td>
         <td><%= car.mileage %> km/L</td>
         <td>
-          <%= link_to "詳細情報を表示", car_path(car), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %> <!-- 削除ボタン -->
-          <%= link_to "燃費情報を追加", new_mileage_car_path(car), class: "btn btn-primary" %> <!-- 燃費情報追加ボタン -->
+          <%= link_to "詳細情報を表示", car_path(car), class: "btn btn-info" %> <!-- 詳細ボタン -->
+          <%= link_to "編集", edit_car_path(car), class: "btn btn-warning" %> <!-- 編集ボタン -->
+          <%= link_to "削除", car_path(car), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "btn btn-danger" %> <!-- 削除ボタン -->
         </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-

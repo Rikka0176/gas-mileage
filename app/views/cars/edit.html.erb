@@ -1,0 +1,29 @@
+<h1>車を編集</h1>
+
+<%= form_for(@car) do |f| %>
+  <div class="field">
+    <%= f.label :make %>
+    <%= f.text_field :make %>
+  </div>
+
+  <div class="field">
+    <%= f.label :model %>
+    <%= f.text_field :model %>
+  </div>
+
+  <div class="field">
+    <%= f.label :year %>
+    <%= f.text_field :year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mileage %>
+    <%= f.number_field :mileage %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", cars_path, class: "btn btn-secondary" %>
